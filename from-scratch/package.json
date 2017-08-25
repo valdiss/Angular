@@ -1,0 +1,47 @@
+{
+  "name": "from-scratch",
+  "version": "1.0.0",
+  "description": "An Angular Project from Scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-dev-server --inline --progress --port 8080 --config webpack.config.dev.js",
+    "build:prod": "del-cli dist && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'src/app/**/*.js' 'src/app/**/*.ngfactory.ts' 'src/app/**/*.js.map' 'src/app/**/*.shim.ts' 'src/app/**/*.ngsummary.json' 'src/app/**/*.css.shim.ngstyle.ts' 'dist/app'",
+    "serve": "lite-server"
+  },
+  "author": "Valentin Dissais",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/animations": "^4.3.5",
+    "@angular/common": "^4.3.5",
+    "@angular/compiler": "^4.3.5",
+    "@angular/compiler-cli": "^4.3.5",
+    "@angular/core": "^4.3.5",
+    "@angular/forms": "^4.3.5",
+    "@angular/http": "^4.3.5",
+    "@angular/platform-browser": "^4.3.5",
+    "@angular/platform-browser-dynamic": "^4.3.5",
+    "@angular/platform-server": "^4.3.5",
+    "@angular/router": "^4.3.5",
+    "@angular/upgrade": "^4.3.5",
+    "core-js": "^2.5.0",
+    "rxjs": "^5.4.3",
+    "webpack-merge": "^4.1.0",
+    "zone.js": "^0.8.16"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.36",
+    "@types/node": "^6.0.45",
+    "angular-router-loader": "^0.6.0",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.2.3",
+    "del-cli": "^1.1.0",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "lite-server": "^2.3.0",
+    "raw-loader": "^0.5.1",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}

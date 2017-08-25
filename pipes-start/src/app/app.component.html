@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <div class="form-group">
+        <label for="">Search by Status</label>
+        <input type="text" class='form-control' [(ngModel)]='filteredStatus'>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="button" name="button" class='btn btn-primary' (click)="onStatusButtonClick('')">All servers</button>
+          <button type="button" name="button" class='btn btn-success' (click)="onStatusButtonClick('stable')">Stable servers</button>
+          <button type="button" name="button" class='btn btn-warning' (click)="onStatusButtonClick('offline')">Offline Servers</button>
+          <button type="button" name="button" class='btn btn-danger' (click)="onStatusButtonClick('critical')">Critical Servers</button>
+        </div>
+      </div>
+      <br><br>
+      <h2>App Status: {{appStatus | async}}</h2>
+      <hr>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers | filter:filteredStatus"
+          [ngClass]="getStatusClasses(server)">
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | shorten:15}}</strong> | {{ server.instanceType | uppercase}} | {{ server.started | date:'longDate' | uppercase }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
