@@ -1,0 +1,6 @@
+<div class="list-group-item" (click)='hovering()' [@listAnimation]='listState'>
+  <div>
+    {{index}} : {{item.content}}
+  </div>
+  <button class ='btn btn-danger' (click)='onRemove()'>X</button>
+</div>

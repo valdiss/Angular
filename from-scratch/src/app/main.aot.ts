@@ -7,4 +7,4 @@ import { AppModuleNgFactory } from './app.module.ngfactory';
 
 enableProdMode();
 
-platformBrowser().bootstrapModuleFactory(AppModuleNgFactory); 
+platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);

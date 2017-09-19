@@ -1,0 +1,8 @@
+.list-group-item div {
+  display: inline-block;
+  width: 92%;
+}
+
+.list-group-item.btn{
+  display: inline-block;
+}
